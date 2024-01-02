@@ -5,9 +5,24 @@ permalink: /questions/javascript-questions/index.html
 ---
 
 * Explain event delegation.
+  * uses event bubble
+  * instead of having to add `addEventListener()` to multiple tags, we can just add it to a parent and use `event.target`
+  * example: a bunch of <button> wrapped in a single `<div>`. listen to `click` event in the `<div>`
 * Explain how `this` works in JavaScript.
-  * Can you give an example of one of the ways that working with `this` has changed in ES6?
+  * In an object method, this refers to the object.
+  * Alone, this refers to the global object.
+  * In a function, this refers to the global object.
+  * In a function, in strict mode, this is undefined.
+  * In an event, this refers to the element that received the event.
+  * Methods like call(), apply(), and bind() can refer this to any object.
+* Can you give an example of one of the ways that working with `this` has changed in ES6?
+  * by default, `this` is bound to window (global)
+  * change is because of the introduction of arrow function
 * Explain how prototypal inheritance works.
+  * inplicit inheritance
+  * all `object` inherit `object.prototype`
+  * can be set/get using `__proto__`
+  * `this` always refers to the object before the `.`
 * What is the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
 * What is a closure, and how/why would you use one?
